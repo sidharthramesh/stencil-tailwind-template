@@ -1,5 +1,5 @@
 import { Config } from '@stencil/core';
-//Add these imports
+//add imports
 import { postcss } from "@stencil/postcss";
 import autoprefixer from "autoprefixer";
 import tailwindcss from "tailwindcss";
@@ -35,6 +35,9 @@ export const config: Config = {
   plugins: [
     postcss({
       // add postcss plugins
+      injectGlobalPaths: [
+        'src/global.css',
+      ],
       plugins: [
         // add tailwind css. Config file was added using `npx tailwindcss init`
         tailwindcss("./tailwind.config.js"),
