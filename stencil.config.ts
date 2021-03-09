@@ -42,7 +42,7 @@ export const config: Config = {
         // shadow dom does not respect 'html' and 'body' styling, so we replace it with ':host' instead 
         replace({ pattern: 'html', data: { replaceAll: ':host' } }),
         // purge and cssnano if production build
-        ...(!process.argv.includes("--dev")
+        ...(process.argv.includes("--purge")
           ? [ purge, cssnano() ]
           : [])
       ]
